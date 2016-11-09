@@ -121,6 +121,8 @@
         
             <li><a href="#key_2">儲存KEY資訊</a></li>
         
+            <li><a href="#key-info">刪除KEY INFO</a></li>
+        
     
     </ul>
 </div></div>
@@ -605,9 +607,13 @@
              {&quot;DeviceIndex&quot;:&quot;0&quot;,&quot;KeyIndex&quot;:&quot;2&quot;}
           ]
    } 
-系統會根據info的內容依序將IR KEY發送出去
+</code></pre>
 
-</code></pre></div>
+<p>系統會根據info的內容依序將IR KEY發送出去，當取消連動時，請自行將info的ARRAY清除</p>
+<h2 id="key-info">刪除KEY INFO</h2>
+<ul>
+<li><code>slave_device_delete.php</code> - 此API將會刪除所有KEY INFO，系統重置時使用 </li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
