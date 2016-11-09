@@ -580,7 +580,7 @@
 <ul>
 <li><code>slave_device_update.php</code> - 此API提供一個資料庫去儲存已設定過的KEY資訊以及IR LINK資訊</li>
 </ul>
-<p>目前IRM-201裝置的mac是用gateway cid再加上0000字元所組成，而連動TABLE是透過mac這個參數去判別，因此Client端在設定連IR KEY的時候，必須將mac最後一個字元改為1  </p>
+<p>目前IRM-201裝置的mac是用gateway cid再加上0000字元所組成，而連動TABLE是透過mac這個參數去判別，因此Client端在設定連動KEY的時候，必須將mac最後一個字元改為1  </p>
 <p>設定KEY INFO</p>
 <pre><code class="json">   {
    &quot;userid&quot;:&quot;benny_wang@sunmoretek.com&quot;,
@@ -605,7 +605,7 @@
              {&quot;DeviceIndex&quot;:&quot;0&quot;,&quot;KeyIndex&quot;:&quot;2&quot;}
           ]
    } 
-
+系統會根據info的內容依序將IR KEY發送出去
 
 </code></pre></div>
         </div>
