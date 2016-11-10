@@ -582,7 +582,8 @@
 <ul>
 <li><code>slave_device_update.php</code> - 此API提供一個資料庫去儲存已設定過的KEY資訊以及IR LINK資訊</li>
 </ul>
-<p>目前IRM-201裝置的mac是用gateway cid再加上0000字元所組成，而連動TABLE是透過mac這個參數去判別，因此Client端在設定連動KEY的時候，必須將mac最後一個字元改為1  </p>
+<p>目前IRM-201裝置的mac是用gateway cid再加上0000字元所組成，而連動TABLE是透過mac這個參數去判別，因此Client端在設定連動KEY的時候，必須將mac最後4個字元加上觸發裝置的SHORT ID</p>
+<p>EX:當WZB-SMG02觸發時要連動IRM-201，而SMG02的SHORT ID(SHORTID[1]=0x12,SHORTID[0]=0x34)為0x1234，所以最後連動的mac為xxxxxxxxxxxx1234 </p>
 <p>設定KEY INFO</p>
 <pre><code class="json">   {
    &quot;userid&quot;:&quot;benny_wang@sunmoretek.com&quot;,
@@ -596,11 +597,12 @@
    } 
 </code></pre>
 
-<p>設定連動KEY INFO</p>
+<p>設定連動KEY INFO
+EX:當WZB-SMG02觸發時要連動IRM-201，而SMG02的SHORT ID(SHORTID[1]=0x12,SHORTID[0]=0x34)為0x1234，所以最後連動的mac為xxxxxxxxxxxx1234 </p>
 <pre><code class="json">   {
    &quot;userid&quot;:&quot;benny_wang@sunmoretek.com&quot;,
    &quot;cid&quot;:&quot;44334C4F92C4&quot;,
-   &quot;mac&quot;:&quot;44334C4F92C40001&quot;,
+   &quot;mac&quot;:&quot;44334C4F92C4xxxx&quot;,
    &quot;timestamp&quot;:&quot;2016-11-09 10:00:00&quot;,
    &quot;info&quot;:[
              {&quot;DeviceIndex&quot;:&quot;0&quot;,&quot;KeyIndex&quot;:&quot;1&quot;},
